@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Kishore Jain — Independent Consultant. Data &amp; AI Engineering, Cloud Platforms, Generative AI. 15+ years experience. Available for contracts.">
+<meta name="author" content="Kishore Jain">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kishore Jain — Data &amp; AI Engineering Consultant">
+<meta property="og:description" content="Data &amp; AI Engineering · Cloud Platforms · Generative AI. 15+ years experience. Remote, US &amp; EU hours.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20x='50%25'%20y='50%25'%20dominant-baseline='central'%20text-anchor='middle'%20font-family='Georgia,serif'%20font-size='62'%20fill='%23C9760A'%3EKJ%3C/text%3E%3C/svg%3E">
+<title>Kishore Jain</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+</head>
+<body>
+
+<style>
+  :root {
+    --bg:        #F5F3EE;
+    --surface:   #FFFFFF;
+    --border:    #DDD9D0;
+    --text:      #111520;
+    --muted:     #70778A;
+    --faint:     #9AA0B2;
+    --accent:    #C9760A;
+    --accent-lt: #FDF1E0;
+    --tag-bg:    #ECEAE4;
+    --tag-text:  #3A3E4A;
+    --node:      #C9760A;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:        #0B0E1A;
+      --surface:   #131729;
+      --border:    #20263C;
+      --text:      #DCE2F0;
+      --muted:     #8892B0;
+      --faint:     #505870;
+      --accent:    #F0A830;
+      --accent-lt: #1C1405;
+      --tag-bg:    #191E30;
+      --tag-text:  #A0AACC;
+      --node:      #F0A830;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:        #0B0E1A;
+    --surface:   #131729;
+    --border:    #20263C;
+    --text:      #DCE2F0;
+    --muted:     #8892B0;
+    --faint:     #505870;
+    --accent:    #F0A830;
+    --accent-lt: #1C1405;
+    --tag-bg:    #191E30;
+    --tag-text:  #A0AACC;
+    --node:      #F0A830;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 56px 28px 80px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--border);
+  }
+  .header-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(38px, 6vw, 58px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-wrap: balance;
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--muted);
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4px 10px;
+  }
+  .badge.available {
+    color: var(--accent);
+    background: var(--accent-lt);
+    border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+  .badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .section:last-child { border-bottom: none; }
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 24px;
+  }
+
+  /* ── METRICS ── */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .metric {
+    background: var(--surface);
+    padding: 22px 20px 18px;
+  }
+  .metric-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .metric-num span { color: var(--accent); }
+  .metric-label {
+    font-size: 11.5px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .service {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px 18px 16px;
+  }
+  .service-icon {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+    line-height: 1;
+  }
+  .service h3 {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .service p {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .tl-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0 20px;
+    position: relative;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: 120px;
+    top: 8px;
+    bottom: 0;
+    width: 1px;
+    background: var(--border);
+  }
+  .tl-item:last-child::before { display: none; }
+  .tl-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--faint);
+    padding-top: 2px;
+    text-align: right;
+    line-height: 1.4;
+  }
+  .tl-body {
+    padding: 0 0 28px 24px;
+    position: relative;
+  }
+  .tl-body::before {
+    content: '';
+    position: absolute;
+    left: -4.5px;
+    top: 7px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 1px var(--border);
+  }
+  .tl-item:first-child .tl-body::before {
+    background: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+  .tl-company {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .tl-role {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .tl-desc {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── PROJECT ── */
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px 22px 20px;
+  }
+  .project-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .project-name {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--text);
+  }
+  .project-type {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-lt);
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+    border-radius: 3px;
+    padding: 3px 8px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .project-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .stack-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--tag-text);
+    background: var(--tag-bg);
+    border-radius: 3px;
+    padding: 2px 7px;
+  }
+
+  /* ── TECH GRID ── */
+  .tech-group { margin-bottom: 20px; }
+  .tech-group:last-child { margin-bottom: 0; }
+  .tech-group-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 9px;
+  }
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tech-tag {
+    font-size: 12.5px;
+    color: var(--tag-text);
+    background: var(--tag-bg);
+    border-radius: 4px;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+  }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .contact-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .contact-value {
+    font-size: 13.5px;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .contact-value a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .contact-value a:hover { text-decoration: underline; }
+
+  @media (max-width: 560px) {
+    .metrics { grid-template-columns: 1fr 1fr; }
+    .services { grid-template-columns: 1fr; }
+    .tl-item { grid-template-columns: 90px 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <p class="header-eyebrow">Portfolio · Independent Consultant</p>
+    <h1>Kishore Jain</h1>
+    <p class="header-title">Data & AI Engineering · Cloud Platforms · Generative AI</p>
+    <div class="badges">
+      <span class="badge available"><span class="badge-dot"></span>Available for contracts</span>
+      <span class="badge">📍 Pune, India</span>
+      <span class="badge">🌐 Remote · US & EU hours</span>
+      <span class="badge">15+ years experience</span>
+    </div>
+  </header>
+
+  <!-- METRICS -->
+  <section class="section">
+    <p class="section-label">Impact at a glance</p>
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-num">70<span>+</span></div>
+        <div class="metric-label">Enterprise customers served</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">40<span>%</span></div>
+        <div class="metric-label">Forecast accuracy improvement</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">20<span>%</span></div>
+        <div class="metric-label">Faster release cycles via CI/CD</div>
+      </div>
+      <div class="metric">
+        <div class="metric-num">1<span>M+</span></div>
+        <div class="metric-label">Programs in regression suite</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section">
+    <p class="section-label">What I deliver</p>
+    <div class="services">
+      <div class="service">
+        <span class="service-icon">⚙️</span>
+        <h3>Data Engineering</h3>
+        <p>End-to-end pipelines — ingestion, CDC, transformation, validation — on AWS and Databricks at enterprise scale.</p>
+      </div>
+      <div class="service">
+        <span class="service-icon">☁️</span>
+        <h3>Cloud Architecture</h3>
+        <p>AWS-native data lake design: Lambda, Glue, ECS, Step Functions, Delta Lake. Multi-tenant, event-driven, resilient.</p>
+      </div>
+      <div class="service">
+        <span class="service-icon">🤖</span>
+        <h3>Generative AI & LLM</h3>
+        <p>RAG systems, GraphRAG over knowledge graphs, agentic orchestration with LangGraph, MCP tools, and LLM evaluation.</p>
+      </div>
+      <div class="service">
+        <span class="service-icon">📈</span>
+        <h3>Forecasting Platforms</h3>
+        <p>Demand forecasting engines using ARIMA, Random Forest, and ML clustering — purpose-built for supply-chain.</p>
+      </div>
+      <div class="service">
+        <span class="service-icon">🔄</span>
+        <h3>Platform Modernization</h3>
+        <p>Greenfield builds and legacy migration — monolith to cloud-native data platforms with CI/CD and IaC from day one.</p>
+      </div>
+      <div class="service">
+        <span class="service-icon">🧪</span>
+        <h3>DevOps & Automation</h3>
+        <p>CI/CD standardization (Bitbucket, GitHub Actions), security scanning, gated deploys, and automated regression testing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section">
+    <p class="section-label">Experience</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">Feb – Aug<br>2026</div>
+        <div class="tl-body">
+          <div class="tl-company">Blue Ridge Global</div>
+          <div class="tl-role">Independent Consultant · Contract</div>
+          <div class="tl-desc">Designed a Unified Configuration Framework for demand forecasting — dependency injection, modular provider-driven architecture, fail-fast validation, and structured unit testing enabling rapid customer onboarding.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Oct 2021 –<br>Jan 2026</div>
+        <div class="tl-body">
+          <div class="tl-company">Baxter Planning Solutions</div>
+          <div class="tl-role">Staff Engineer, Data Engineering</div>
+          <div class="tl-desc">Led data-engineering for an AWS S3 data lake serving 70+ enterprise customers. Architected multi-tenant DMS → Bronze → Silver ingestion framework. Standardized CI/CD, cutting release cycles ~20%.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">May 2019 –<br>Oct 2021</div>
+        <div class="tl-body">
+          <div class="tl-company">Entercoms Solutions</div>
+          <div class="tl-role">Data Science Architect</div>
+          <div class="tl-desc">Led Databricks-on-AWS Service Data Hub for enterprise analytics. Designed forecasting engines improving SKU demand-forecast accuracy 40% through clustering, ARIMA, and ML.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Jun 2007 –<br>Feb 2018</div>
+        <div class="tl-body">
+          <div class="tl-company">SAS R&D Pvt. Ltd.</div>
+          <div class="tl-role">Software Manager · Sr. Software Specialist</div>
+          <div class="tl-desc">Managed a team of 14 engineers across SAS Enterprise Miner, Text Analytics, and Data Integration Studio. Built regression-testing infrastructure executing 1M+ programs.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT SPOTLIGHT -->
+  <section class="section">
+    <p class="section-label">Project spotlight</p>
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-name">Agentic Supply-Chain AI Platform</div>
+        <span class="project-type">POC</span>
+      </div>
+      <p class="project-desc">Self-built proof of concept demonstrating how agentic GenAI augments supply-chain planning. GraphRAG over a Neo4j knowledge graph, multi-agent orchestration with agent-to-agent delegation, MCP tools, and natural-language text-to-SQL. Includes guardrails (PII / prompt-injection), an autonomy ladder with human feedback, episodic memory, LLM evaluation (Ragas), drift detection, Langfuse observability, and a FastAPI service. 56 automated tests. Available on request.</p>
+      <div class="project-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">LangGraph</span>
+        <span class="stack-tag">Neo4j</span>
+        <span class="stack-tag">FastMCP</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">Postgres</span>
+        <span class="stack-tag">Redis</span>
+        <span class="stack-tag">Ollama</span>
+        <span class="stack-tag">Ragas</span>
+        <span class="stack-tag">Langfuse</span>
+        <span class="stack-tag">Docker</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="section">
+    <p class="section-label">Technologies</p>
+    <div class="tech-group">
+      <div class="tech-group-label">Cloud & Data Platforms</div>
+      <div class="tech-tags">
+        <span class="tech-tag">AWS Lambda</span>
+        <span class="tech-tag">AWS Glue</span>
+        <span class="tech-tag">ECS</span>
+        <span class="tech-tag">Step Functions</span>
+        <span class="tech-tag">AWS Batch</span>
+        <span class="tech-tag">S3</span>
+        <span class="tech-tag">DMS</span>
+        <span class="tech-tag">SNS / SQS</span>
+        <span class="tech-tag">Databricks</span>
+        <span class="tech-tag">Delta Lake</span>
+        <span class="tech-tag">Airflow · MWAA</span>
+      </div>
+    </div>
+    <div class="tech-group">
+      <div class="tech-group-label">Programming</div>
+      <div class="tech-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">PySpark</span>
+        <span class="tech-tag">Polars</span>
+        <span class="tech-tag">Pandas</span>
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">SQLAlchemy</span>
+        <span class="tech-tag">SAS</span>
+        <span class="tech-tag">Shell Scripting</span>
+      </div>
+    </div>
+    <div class="tech-group">
+      <div class="tech-group-label">Generative AI & LLM</div>
+      <div class="tech-tags">
+        <span class="tech-tag">RAG</span>
+        <span class="tech-tag">GraphRAG</span>
+        <span class="tech-tag">LangGraph</span>
+        <span class="tech-tag">Neo4j</span>
+        <span class="tech-tag">MCP</span>
+        <span class="tech-tag">Ragas</span>
+        <span class="tech-tag">Langfuse</span>
+        <span class="tech-tag">Vector Search</span>
+        <span class="tech-tag">Prompt Engineering</span>
+      </div>
+    </div>
+    <div class="tech-group">
+      <div class="tech-group-label">DevOps & Analytics</div>
+      <div class="tech-tags">
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">GitHub Actions</span>
+        <span class="tech-tag">Bitbucket Pipelines</span>
+        <span class="tech-tag">Jenkins</span>
+        <span class="tech-tag">Power BI</span>
+        <span class="tech-tag">Tableau</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section">
+    <p class="section-label">Get in touch</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value"><a href="https://www.linkedin.com/in/kishore-jain/" target="_blank">kishore-jain</a></span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-label">Availability</span>
+        <span class="contact-value">Immediate · Remote</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
